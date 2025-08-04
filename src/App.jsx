@@ -14,14 +14,20 @@ function App() {
   }
 
   const updateBook = (updatedBook)=>{
-    setBooks(books.map((b) => (b.id === updateBook.id ? updateBook : b)));
+    setBooks(books.map((b) => (b.id === updatedBook.id ? updatedBook : b)));
   }
 
   return (
-    <div style={{maxWidth: 600, margin: '2 rem auto'}}>
-      <h1>BookTrack</h1>
-      <BookForm onAdd={addBook} />
+    <div style={{margin:'20px'}}>
+      <p class="bg-linear-to-r from-pink-500 to-violet-500 bg-clip-text text-center text-5xl font-extrabold text-transparent ...">
+        Book Tracker
+    </p>
+    <BookForm onAdd={addBook} />
+    <div className="max-w-xl mx-auto mt-10">
+      
       <BookList books={books} onDelete={deleteBook} onUpdate={updateBook}/>
+    </div>
+      
 
     </div>
   );
